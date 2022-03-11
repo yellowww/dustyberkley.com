@@ -1,0 +1,9 @@
+@import "backdrop.css";
+@import "mainMenu/menu.css";
+@import "../global/sidebar.css";
+
+body {
+    background-color: #0a001b;
+    overflow: hidden;
+    margin:0;
+}

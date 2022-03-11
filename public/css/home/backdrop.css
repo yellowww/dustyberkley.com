@@ -1,0 +1,31 @@
+
+#back-shade {
+    z-index: -1;
+    position: absolute;
+    top:0;
+    left:0;
+    background-image:linear-gradient(50deg, #10002bff,#10002bff, #00000000) ;
+    width:100vw;
+    height:100vh;
+}
+
+#back-canvas {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: -2;
+    transform: skewY(20deg) translateY(-100vh);
+}
+
+
+#back-text {
+    font-family: 'Signika', sans-serif;
+    font-weight: 600;
+    position: absolute;
+    right: 1.5cm;
+    top: 1cm;
+    font-size: 4em;
+    color: rgba(120,120,120,0.5);
+    pointer-events: none;
+    user-select: none;
+}

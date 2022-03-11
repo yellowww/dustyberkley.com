@@ -1,0 +1,10 @@
+@import "menuButton.css";
+
+#menu {
+    flex-wrap: wrap;
+    display:flex;
+    align-items: center;
+    height:60vh;
+    padding-top:20vh;
+    margin-left:10em;
+}

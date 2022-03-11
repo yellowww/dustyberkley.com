@@ -1,0 +1,28 @@
+.menuTitle {
+    color:#f5f3f4;
+    font-family: 'Signika', sans-serif;
+    font-weight: 600;
+    font-size: 6.5em;
+    text-shadow: 10px 10px 30px #f5f3f4aa;
+    user-select: none;
+}
+
+.menuButton {
+    color:#f5f3f4;
+    font-family: 'Signika', sans-serif;
+    font-weight: 300;
+    font-size: 3em;
+    cursor:pointer;
+    padding-left:0.3cm;
+    padding-right:0.3cm;
+    transition: padding .2s, margin .2s;
+    border-radius: 0.1em;
+    background-image:none;
+    user-select: none;
+}
+
+.flexBreak {
+    flex-basis: 100%;
+    height:0;
+    width:0;
+}
