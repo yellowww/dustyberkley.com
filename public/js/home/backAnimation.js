@@ -53,7 +53,7 @@ var backAnimation = {
                     const scale = backAnimation.r.findScale(px,py,(window.innerWidth/len0));
                     const scaleShift = ((window.innerWidth/len0)-scale)/2;
                     backAnimation.r.c.fillStyle = "hsl("+thisSquare.h+","+(thisSquare.s)+"%,"+(thisSquare.l+lMod)+"%)";
-                    backAnimation.r.c.fillRect(px+scaleShift,py+scaleShift,scale,scale);
+                    backAnimation.r.c.fillRect(px+scaleShift,py+scaleShift,scale+1,scale+1);
                 }
             }
         },
@@ -73,7 +73,7 @@ var backAnimation = {
                 const scaleShift = ((window.innerWidth/len0)-scale)/2;
 
                 backAnimation.r.c.fillStyle = "hsl("+thisSquare.h+","+thisSquare.s+"%,"+(thisSquare.l+lMod)+"%)";
-                backAnimation.r.c.fillRect(thisSquare.x+scaleShift,thisSquare.y+scaleShift,scale,scale)
+                backAnimation.r.c.fillRect(thisSquare.x+scaleShift,thisSquare.y+scaleShift,scale+1,scale+1);
             }
         }
     },
@@ -82,20 +82,21 @@ var backAnimation = {
         frame: () => {
             backAnimation.update.convertFrame();
             backAnimation.update.moveFrame();
-            if(backAnimation.mouse.clickDist<window.innerWidth*2) backAnimation.mouse.clickDist+=15;
+            if(backAnimation.mouse.clickDist<window.innerWidth*2) backAnimation.mouse.clickDist+=20;
         },
         moveFrame:() => {
             for(let i=0;i<backAnimation.squares.moving.length;i++) {
                 let thisMoving = backAnimation.squares.moving[i];
                 thisMoving.x+=(thisMoving.x-thisMoving.tx)/-10;
                 thisMoving.y+=(thisMoving.y-thisMoving.ty)/-10;
-                if(Math.abs(thisMoving.x-thisMoving.tx)<4 && Math.abs(thisMoving.y-thisMoving.ty)<4) {
+                if(Math.abs(thisMoving.x-thisMoving.tx)<2 && Math.abs(thisMoving.y-thisMoving.ty)<2) {
                     backAnimation.squares.static[thisMoving.i][thisMoving.j] = {
                         h:thisMoving.h,
                         s:thisMoving.s,
                         l:thisMoving.l
                     }
                     backAnimation.squares.moving.splice(i,1);
+                    backAnimation.squares.allMoving.splice(i,1);
                     i--;
                 }
             }
